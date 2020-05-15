@@ -1,9 +1,13 @@
 const express = require("express");
 const routes = express.Router();
 
+// Rotas de Usuários
+const usersController = require('./controllers/usersController');
+routes.post('/users', usersController.register);
+
 // Rotas de Ferramentas
-const ToolsController = require("./controllers/ToolsController");
-routes.get("/tools", ToolsController.index);
-routes.post("/tools", ToolsController.create);
+const toolsController = require("./controllers/ToolsController");
+routes.get("/tools", toolsController.index);
+routes.post("/tools", toolsController.create);
 
 module.exports = routes;
